@@ -277,7 +277,7 @@ svg circle:nth-child(2) {
 }
 
 .card {
-  height: 350px;
+  height: 380px;
   width: 400px;
   min-width: 250px;
   padding: 1.5rem;
@@ -331,9 +331,9 @@ svg circle:nth-child(2) {
 }
 
 .card-author {
-  margin: 3rem 0 0;
+  margin: 1rem 4rem 3rem;
   display: grid;
-  grid-template-columns: 75px 1fr;
+
   align-items: center;
   position: relative;
 }
