@@ -1,0 +1,76 @@
+<!-- <p>{{ temp | json }}</p> -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <div formGroupName="userData">
+          <div class="form-group">
+            <label for="projectname">Projectname</label>
+            <input
+              type="text"
+              id="projectname"
+              formControlName="projectname"
+              class="form-control"
+            />
+            <span
+              *ngIf="
+                !signupForm.get('userData.projectname').valid &&
+                signupForm.get('userData.projectname').touched
+              "
+              class="help-block"
+            >
+              <span
+                *ngIf="
+                  signupForm.get('userData.projectname').errors[
+                    'nameIsForbidden'
+                  ]
+                "
+                >This name is invalid!</span
+              >
+              <span
+                *ngIf="
+                  signupForm.get('userData.projectname').errors['required']
+                "
+                >This field is required!</span
+              >
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="email">email</label>
+            <input
+              type="text"
+              id="email"
+              formControlName="email"
+              class="form-control"
+            />
+            <span
+              *ngIf="
+                !signupForm.get('userData.email').valid &&
+                signupForm.get('userData.email').touched
+              "
+              class="help-block"
+              >Please enter a valid email!</span
+            >
+          </div>
+
+          <label for="projectstatus">ProjectStatus</label><br />
+          <select
+            name="projectstatus"
+            id="projectstatus"
+            formControlName="projectstatus"
+          >
+            <option *ngFor="let i of status" [ngValue]="i">
+              {{ i }}
+            </option></select
+          ><br />
+          <span
+            *ngIf="!signupForm.valid && signupForm.touched"
+            class="help-block"
+            >Please enter valid data!</span
+          ><br />
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

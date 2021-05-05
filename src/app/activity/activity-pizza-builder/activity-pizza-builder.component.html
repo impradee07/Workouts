@@ -1,0 +1,16 @@
+<div class="row">
+  
+  <div class="col-xl-12">
+    <h6 *ngFor="let element of items"
+    >
+    <div class="pull-left">
+      <h4 class="list-group-item-heading">{{element.name}}</h4>
+      <p class="list-group-item-text">{{element.desc}}</p>
+    </div>
+    <span class="pull-right">
+      <img src="{{element.img}}"
+       alt="" class="img-responsive" style="max-height: 50px;">
+    </span>
+  </h6>
+  </div>
+</div>

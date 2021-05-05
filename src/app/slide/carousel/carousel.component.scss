@@ -1,0 +1,39 @@
+.slideshow {
+  width: 500px;
+  height: 80px;
+  border-style: ridge;
+  margin: 100px 0 0 200px;
+}
+
+.slideshow-container {
+  width: 1200px;
+  max-height: 550px;
+  text-align: center;
+  margin-top: 25px;
+  margin-left: -200px;
+}
+
+.slideshow-container img.image-active {
+  display: block;
+  width: 100%;
+}
+
+.span-text {
+  margin-left: -750px;
+  margin-top: -30px;
+  color: #1339c2;
+  font-weight: 500;
+}
+.demo-content {
+  text-align: left;
+  margin-left: 250px;
+  margin-right: 150px;
+  margin-top: -30px;
+  font-weight: 500;
+  color: #1339c2;
+}
+
+.temp {
+  font-size: 50px;
+  color: var(--color);
+}

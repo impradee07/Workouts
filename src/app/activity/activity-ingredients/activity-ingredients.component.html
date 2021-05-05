@@ -1,0 +1,51 @@
+<br>
+<br>
+<div class="container centered">
+  
+  <div class="form-group">
+      <label >Pizza Choice</label>&nbsp;&nbsp;&nbsp;
+      
+      <select name="Pizza"  #choice (click)="burst(choice)" >
+        <option value="Thin">Thin</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+        <option value="CheeseBurst">CheeseBurst</option>
+      </select>
+      <br>
+  </div> 
+  <!--
+  <div class="btn-group">
+    <button type="button"
+      class="btb btn-primary dropdown-toggle">Pizza burst <span class="caret"></span>
+      <ul class="dropdown-menu">
+        <li><a href="#">Thin</a></li>
+        <li><a href="#">Medium</a></li>
+        <li><a href="#">Large </a></li>
+      </ul>
+
+    </button>
+  </div>
+-->
+  <div class="form-group" >
+    <label>Tomato </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="btn btn-primary "  #itemt1 (click)="onitemt1()"><span>&#43;</span></button>&nbsp;
+    <button class="btn btn-primary " #itemf1 (click)="onitemf1()"><span>&minus;</span></button>
+  </div>
+  
+  
+  <div class="form-group">
+    <label >Capsicum</label>&nbsp;&nbsp;&nbsp;
+    <button class="btn btn-primary " #itemt2 (click)="onitemt2()"><span>&#43;</span></button>&nbsp;
+    <button class="btn btn-primary " #itemf2 (click)="onitemf2()"><span>&minus;</span></button>
+  </div>
+
+  <div class="form-group">
+    <label >Cheese</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="btn btn-primary " #itemt3 (click)="onitemt3()"><span>&#43;</span></button>&nbsp;
+    <button class="btn btn-primary " #itemf3 (click)="onitemf3()"><span>&minus;</span></button>
+    </div>
+  <div class="row">
+    <button type="submit" class="btn btn-success" (click)="pizzachoice()">Sumbit</button>
+  </div>
+    
+  </div>

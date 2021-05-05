@@ -1,0 +1,153 @@
+<!--Template-->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form #f="ngForm" (ngSubmit)="onCreate(f.value)">
+        <div id="data" ngModelGroup="data" #userData="ngModelGroup">
+          <div class="form-group">
+            <label for="email">Mail</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              ngModel
+              name="email"
+              placeholder="Enter e-mail"
+              required
+              email
+              style="max-width: 40%"
+              #email="ngModel"
+            />
+            <span class="help-block" *ngIf="!email.valid && email.touched"
+              >Please enter a valid email</span
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="subscription">Subscriptions</label>
+            <select
+              style="cursor: pointer; max-width: 20%"
+              id="subscription"
+              class="form-control"
+              [ngModel]="opt"
+              name="subscription"
+            >
+              <option value="Basic">Basic</option>
+              <option value="Advanced">Advanced</option>
+              <option value="Pro">Pro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              style="max-width: 40%"
+              placeholder="Enter password"
+              class="form-control"
+              name="password"
+              ngModel
+              #password="ngModel"
+              required
+            />
+            <span
+              class="help-block alert"
+              *ngIf="password.invalid && password.touched"
+              >Please enter a valid password</span
+            >
+          </div>
+
+          <button class="btn btn-success" type="submit" [disabled]="!f.valid">
+            Submit
+          </button>
+          <hr />
+        </div>
+      </form>
+      <div class="row">
+        <div class="col-md-3">
+          <button class="btn btn-primary" (click)="onFetch()">Fetch</button>|
+          <button class="btn btn-danger" (click)="onClear()">Clear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <p *ngIf="formsarray.length < 1 && !fetching">No Data</p>
+      <ul class="list-group" *ngIf="formsarray.length >= 1 && !fetching">
+        <li
+          class="list-group-item"
+          *ngFor="let data of formsarray"
+          style="border: 1px solid black"
+        >
+          <h3>{{ data.id }}</h3>
+          <p>{{ data.email }}</p>
+          <p>{{ data.subscriptions }}</p>
+          <p>{{ data.password }}</p>
+        </li>
+      </ul>
+      <p *ngIf="fetching && !error">Loading....</p>
+      <div class="row" *ngIf="error">
+        <h3 class="alert alert-danger">
+          {{ error }}
+          <button class="btn btn-danger" (click)="handle()">Okay</button>
+        </h3>
+
+        <img
+          src="https://previews.123rf.com/images/artursz/artursz1905/artursz190536316/123752469-word-writing-text-unauthorized-access-business-photo-showcasing-use-of-a-computer-or-network-without.jpg"
+          alt="Unauthorized Access"
+          style="max-height: 10%; max-width: 50%"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+          <div formGroupName="userData">
+            <div class="form-group">
+              <label for="projectname">Projectname</label>
+              <input
+                type="text"
+                id="projectname"
+                formControlName="projectname"
+                class="form-control">
+              <span
+                *ngIf="!signupForm.get('userData.projectname').valid && signupForm.get('userData.projectname').touched"
+                class="help-block">
+                <span *ngIf="signupForm.get('userData.projectname').errors['nameIsForbidden']">This name is invalid!</span>
+                <span *ngIf="signupForm.get('userData.projectname').errors['required']">This field is required!</span>
+  
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="email">email</label>
+              <input
+                type="text"
+                id="email"
+                formControlName="email"
+                class="form-control">
+              <span
+                *ngIf="!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched"
+                class="help-block">Please enter a valid email!</span>
+            </div>
+          
+          <label for="projectstatus">ProjectStatus</label><br>
+          <select name="projectstatus" id="projectstatus" formControlName="projectstatus">
+            <option *ngFor="let i of status" [ngValue]="i">{{i}}</option>
+          </select><br>
+          <span
+            *ngIf="!signupForm.valid && signupForm.touched"
+            class="help-block">Please enter valid data!</span><br>
+          <button class="btn btn-primary " type="submit">Submit</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  -->

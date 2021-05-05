@@ -1,0 +1,26 @@
+<!-- <div style="width: 500px; height: 80px; border-style: ridge;">
+  <carousel>
+    <slide *ngFor="let slide of images; let index = index">
+      <img
+        [src]="slide.url"
+        alt="image slide"
+        style="max-height: 50px; max-width: 100px"
+      />
+      <div class="demo-content">
+        <p>{{ slide.text }}</p>
+      </div>
+    </slide>
+  </carousel>
+</div> -->
+<div class="slideshow-container">
+  <img
+    *ngFor="let img of images"
+    [src]="img.url"
+    [ngClass]="{ 'image-active': selectedindex == i }"
+    style="max-height: 40px; max-width: 100px"
+  />
+  <p class="span-text">OSCAR MAGIC</p>
+  <p class="demo-content">{{ text }}</p>
+</div>
+
+<!-- <p class="demo-content">{{ text }}</p> -->
