@@ -1,0 +1,17 @@
+input[type="text"] {
+  width: 50%;
+}
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.item1 {
+  flex-basis: 300px;
+}
+.item2 {
+  flex-grow: 1;
+  align-self: center;
+}
+.item3 {
+}

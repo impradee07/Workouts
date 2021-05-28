@@ -1,0 +1,62 @@
+.arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+}
+.activeArrow {
+  border-right: solid 5px white;
+  border-top: solid 5px transparent;
+  border-bottom: solid 5px transparent;
+  height: 0px;
+  position: relative;
+  top: 20px;
+}
+
+.avatar1 {
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: rgb(104, 102, 102);
+  border-radius: 50px;
+  padding-left: 15px;
+}
+.avatar2 {
+  color: white;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 13px;
+  background: #066cd3;
+  border-radius: 10px;
+  padding: 1px 1px 5px 2px;
+  margin: -11px 0px 0px 30px;
+}
+
+header,
+section,
+aside,
+footer {
+  margin: 0;
+  padding: 20px;
+  border: 1px solid #000000;
+}
+
+header {
+  background: #03a9f4;
+}
+
+.menu {
+  background: #d22b1f;
+}
+
+.content {
+  background: #129a22;
+  flex-grow: 1;
+}
+
+/* Flex */
+.flex-container {
+  display: flex;
+  height: 400px;
+}

@@ -1,0 +1,49 @@
+<!--
+  <div class="container">
+    <div class="card">
+      <div class="box">
+        <div class="percent">
+          <svg class="full">
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle
+              cx="70"
+              cy="70"
+              r="70"
+              [style.--value]="WeatherData.main.humidity"
+            ></circle>
+          </svg>
+          <div class="number">
+            <h2>{{ WeatherData.main.humidity }}<span>%</span></h2>
+          </div>
+        </div>
+        <h2 class="texts">Humidity</h2>
+      </div>
+    </div>
+  </div>
+  -->
+
+<p class="p-6 text-uppercase text-center">{{ cityName }}, {{ location }}</p>
+
+<section class="card-list">
+  <article *ngFor="let day of weatherData; let j = index" class="card">
+    <header class="card-header">
+      <img src="{{ day.icon }}" class="h-10 rounded" alt="weather icon" />
+
+      <span class="text-center">{{ day.text }}</span
+      ><br />
+      <span>{{ days[j] }}</span>
+    </header>
+    <div class="card-author">
+      <p>sunrise : {{ day.sunrise }}</p>
+      <p>sunset : {{ day.sunset }}</p>
+      <p>moonrise : {{ day.moonrise }}</p>
+      <p>moonset : {{ day.moonset }}</p>
+      <p>avgtemp_c : {{ day.avgtemp_c }}</p>
+      <p>daily_chance_of_rain: {{ day.daily_chance_of_rain }}</p>
+      <p>daily_chance_of_snow : {{ day.daily_chance_of_snow }}</p>
+      <p>maxtemp_c : {{ day.maxtemp_c }}</p>
+      <p>maxwind_kph : {{ day.maxwind_kph }}</p>
+      <p>mintemp_c : {{ day.mintemp_c }}</p>
+    </div>
+  </article>
+</section>

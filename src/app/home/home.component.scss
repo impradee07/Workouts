@@ -1,0 +1,40 @@
+.slantedDivA {
+  position: relative;
+  width: 100vw;
+  height: 400px;
+  background: rgb(255, 95, 67);
+}
+
+.slantedDivA:after {
+  position: absolute;
+  width: 100%;
+  height: 30vw;
+  content: "";
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform-origin: top left;
+  transform: skewY(10.3deg);
+}
+
+.content-1 {
+  position: relative;
+  left: 660px;
+  top: -100px;
+  width: 30%;
+  text-align: justify;
+}
+.content-2 {
+  position: relative;
+  left: 660px;
+  top: -100px;
+  width: 30%;
+  text-align: justify;
+}
+.head {
+  float: right;
+  margin-right: 6rem;
+}
